@@ -98,9 +98,7 @@ with torch.no_grad():
         avg_detect = 0
         n_frame = 0
         for iteration in range(0, num_frames+init_frames) :
-            #각 File 내에서 최초 num_frames 의 frame을 각 Frame단위로 Fack Decision
-            # 왜 그런지는 모르겠는데 제 컴퓨터에서는 retrieve() 가 안되고 read() 가 되어서 각자 알맞게 수정하면 될 듯 합니다 ;ㅅ;
-            # 이전 코드 : ret, frame = capture.retrieve()
+
             ret, frame = capture.read()
             if opt.crop:
                 if iteration < init_frames:
